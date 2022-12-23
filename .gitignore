@@ -7,6 +7,15 @@
 build/
 DerivedData/
 
+# Thumbnails
+._*
+
+# Cookie cutter
+# to ignore any cookie cutter generated files and directories
+
+cookiecutter.json
+{{ cookiecutter.*
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
@@ -61,11 +70,12 @@ Carthage/Build
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
+fastlane/README.md
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots
-fastlane/README.md
+fastlane/screenshots/**/*.png
 fastlane/test_output
+fastlane/xcov_output
 *.ipa
 *.app.dSYM.zip
 
@@ -81,6 +91,9 @@ swiftlint-report.json
 # Add the *.generated.swift pattern to your .gitignore file to prevent unnecessary conflicts.
 *.generated.swift
 
+# General
 .DS_Store
+.AppleDouble
+.LSOverrid
 
 node_modules/
