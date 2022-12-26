@@ -44,11 +44,9 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - Nimble (10.0.0)
-  - NimbleExtension (0.1.0)
   - PromisesObjC (2.1.1)
   - Quick (6.1.0)
   - R.swift (7.2.4)
-  - Resolver (1.5.0)
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
   - RxAlamofire/Core (6.1.1):
@@ -90,10 +88,8 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher
   - Nimble
-  - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
   - Quick
   - R.swift
-  - Resolver
   - RxAlamofire
   - RxCocoa
   - RxDataSources
@@ -124,7 +120,6 @@ SPEC REPOS:
     - PromisesObjC
     - Quick
     - R.swift
-    - Resolver
     - RxAlamofire
     - RxBlocking
     - RxCocoa
@@ -137,16 +132,6 @@ SPEC REPOS:
     - Sourcery
     - SwiftFormat
     - SwiftLint
-
-EXTERNAL SOURCES:
-  NimbleExtension:
-    :branch: master
-    :git: https://github.com/nimblehq/NimbleExtension
-
-CHECKOUT OPTIONS:
-  NimbleExtension:
-    :commit: e14de1e80b9a5a6ee43ab1cc60f71601bc193347
-    :git: https://github.com/nimblehq/NimbleExtension
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -163,11 +148,9 @@ SPEC CHECKSUMS:
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
-  NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Quick: 6676ffb409bf04abba2ff23902af2407bfc6ac90
   R.swift: 681bb9135f482e7a81d9d27445b837fef5467e11
-  Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -181,6 +164,6 @@ SPEC CHECKSUMS:
   SwiftFormat: d89e201c4e121554de347f764e4ed780526b5173
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 4c5506ad94a03516d5d51a2d0f3cac7f40b2d061
+PODFILE CHECKSUM: 70d13ac000000259c0d7723fdbd7687db472ea5f
 
 COCOAPODS: 1.11.3
