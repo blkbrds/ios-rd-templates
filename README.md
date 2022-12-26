@@ -1,4 +1,4 @@
-# ios-rd-templates
+# ios-rd-templates (Still updating...)
 
 This is iOS Team 's template used in our projects using Xcode Templates
 
