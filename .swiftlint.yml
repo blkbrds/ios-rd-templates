@@ -1,19 +1,16 @@
 reporter: xcode
 
 included:
-  - {PROJECT_NAME}
-  - {PROJECT_NAME}Tests
-  - {PROJECT_NAME}UITests
+  - iOSTemplates
 
 excluded:
-  - {PROJECT_NAME}Tests/Sources/Mocks/Sourcery/AutoMockable.generated.swift
-  - {PROJECT_NAME}/Sources/Supports/Helpers/Rswift/R.generated.swift
   - Pods
   - Derived
   - DerivedData
+  - iOSTemplatesTests
+  - iOSTemplatesUITests
 
 opt_in_rules:
-  - anyobject_protocol
   - array_init
   - attributes
   - closure_body_length
@@ -22,7 +19,6 @@ opt_in_rules:
   - collection_alignment
   - contains_over_first_not_nil
   - convenience_type
-  - discouraged_object_literal
   - discouraged_optional_boolean
   - empty_count
   - empty_string
@@ -63,26 +59,20 @@ opt_in_rules:
   - single_test_class
   - sorted_first_last
   - static_operator
-  - strong_iboutlet
   - toggle_bool
   - type_contents_order
+  - unowned_variable_capture
   - unneeded_parentheses_in_closure_argument
   - unowned_variable_capture
   - untyped_error_in_catch
   - vertical_parameter_alignment_on_call
   - vertical_whitespace
+  - weak_delegate
   - xct_specific_matcher
   - yoda_condition
 disabled_rules:
   - todo
 
-attributes:
-  always_on_same_line:
-    - '@objc'
-cyclomatic_complexity:
-  warning: 18
-line_length: 250
-file_length: 1050
 modifier_order:
   preferred_modifier_order:
     - acl
@@ -96,6 +86,13 @@ modifier_order:
     - convenience
     - typeMethods
     - owned
+attributes:
+  always_on_same_line:
+    - '@objc'
+cyclomatic_complexity:
+  warning: 18
+line_length: 250
+file_length: 1050
 force_unwrapping: error
 function_parameter_count:
   - 6
@@ -112,9 +109,6 @@ type_name:
   max_length:
     warning: 40
     error: 60
-  max_length:
-    warning: 40
-    error: 60
 identifier_name:
   min_length:
     warning: 1
@@ -125,28 +119,17 @@ nesting:
   type_level:
     warning: 3
     error: 6
+implicit_return:
+  included:
+    - closure
+    - getter
 custom_rules:
-  empty_count_zero:
-    name: "Empty Count Violation"
-    regex: (\.count\s*(==|!=|<|<=|>|>=)\s*0)
-    message: "Prefer checking `isEmpty` over comparing `count` to zero. "
-    severity: warning
-  delegate:
-    name: "delegate"
-    regex: "(  var delegate)"
-    message: "Please use `weak` for `delegate`. "
-    severity: error
   comments_space:
     name: "Space After Comment"
     regex: (^ *//\w+)
     message: "There should be a space after //"
     severity: warning
     match_kinds: comment
-  multiple_empty_lines:
-    name: "Multiple Empty Lines"
-    regex: "((?: *\n){3,})"
-    message: "There are too many line breaks"
-    severity: warning
   switch_enum:
     name: "Switch Enum"
     regex: (case \w+\.+rawValue:)
@@ -162,11 +145,6 @@ custom_rules:
     regex: (let (?!this)\w+ = self[, ])
     message: "Please use `let this = self` instead. "
     severity: error
-  unowned:
-    name: "Unowned"
-    regex: "(unowned)"
-    message: "Please use `weak` instead. "
-    severity: error
   empty_string:
     name: "Empty String"
     regex: ((!\w+.isNotEmpty)
@@ -180,5 +158,5 @@ custom_rules:
   query_string:
     name: "Query String"
     regex: ( [=!><]+ \\\(.*\))
-    message: "Donot use the string interpolation syntax for query string. "
+    message: "Do not use the string interpolation syntax for query string. "
     severity: warning
