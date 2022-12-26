@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  iOSTemplates
 //
 //  Created by Khoa Vo T.A. VN.Danang on 23/12/2022.
 //
