@@ -14,7 +14,6 @@ end
 target 'iOSTemplates' do
   # UI
   pod 'Kingfisher'
-  pod 'SnapKit'
 
   # Rx
   pod 'RxAlamofire'

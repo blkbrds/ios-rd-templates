@@ -338,14 +338,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods (= 1.11.3)
-  danger (= 9.1.0)
-  danger-swiftformat (= 0.8.1)
-  danger-swiftlint (= 0.31.0)
-  danger-xcode_summary (= 1.2)
-  danger-xcov (= 0.5.0)
-  fastlane (= 2.211.0)
-  xcov (= 1.8.1)
+  cocoapods
+  danger
+  danger-swiftformat
+  danger-swiftlint
+  danger-xcode_summary
+  danger-xcov
+  fastlane
+  xcov
 
 BUNDLED WITH
    2.1.4
