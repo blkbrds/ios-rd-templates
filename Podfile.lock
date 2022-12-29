@@ -61,25 +61,23 @@ PODS:
     - Differentiator (~> 5.0)
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - RxNimble (6.0.0):
+    - RxNimble/RxBlocking (= 6.0.0)
   - RxNimble/Core (6.0.0):
     - Nimble (~> 10.0)
     - RxSwift (~> 6.0)
   - RxNimble/RxBlocking (6.0.0):
     - RxBlocking
     - RxNimble/Core
-  - RxNimble/RxTest (6.0.0):
-    - RxNimble/Core
-    - RxTest
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - RxTest (6.5.0):
-    - RxSwift (= 6.5.0)
-  - SnapKit (5.6.0)
   - Sourcery (1.8.0):
     - Sourcery/CLI-Only (= 1.8.0)
   - Sourcery/CLI-Only (1.8.0)
-  - SwiftFormat/CLI (0.50.6)
+  - SwiftFormat (0.50.7):
+    - SwiftFormat/Core (= 0.50.7)
+  - SwiftFormat/Core (0.50.7)
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
@@ -93,12 +91,10 @@ DEPENDENCIES:
   - RxAlamofire
   - RxCocoa
   - RxDataSources
-  - RxNimble/RxBlocking
-  - RxNimble/RxTest
+  - RxNimble
   - RxSwift
-  - SnapKit
-  - Sourcery (= 1.8.0)
-  - SwiftFormat/CLI
+  - Sourcery
+  - SwiftFormat
   - SwiftLint
 
 SPEC REPOS:
@@ -127,8 +123,6 @@ SPEC REPOS:
     - RxNimble
     - RxRelay
     - RxSwift
-    - RxTest
-    - SnapKit
     - Sourcery
     - SwiftFormat
     - SwiftLint
@@ -158,12 +152,10 @@ SPEC CHECKSUMS:
   RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
-  SwiftFormat: d89e201c4e121554de347f764e4ed780526b5173
+  SwiftFormat: 4fcf72ee44c7198255108c22ed7135c38a36ba6b
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 70d13ac000000259c0d7723fdbd7687db472ea5f
+PODFILE CHECKSUM: 0a8424640b3c4639baa98e2d86da22a4653dc4ab
 
 COCOAPODS: 1.11.3

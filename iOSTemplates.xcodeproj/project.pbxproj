@@ -22,8 +22,6 @@
 		8A625D542959801D007F1E99 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D532959801D007F1E99 /* UIViewExt.swift */; };
 		8A625D562959807B007F1E99 /* OptionalExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D552959807B007F1E99 /* OptionalExt.swift */; };
 		8A625D5829598791007F1E99 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D5729598791007F1E99 /* StringExt.swift */; };
-		8A625D5A29598993007F1E99 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D5929598993007F1E99 /* Color.swift */; };
-		8A625D5C295989F8007F1E99 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D5B295989F8007F1E99 /* App.swift */; };
 		8A625D5E29598A50007F1E99 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D5D29598A50007F1E99 /* UIColorExt.swift */; };
 		A795922BFDBF4B7D8DEDD41E /* Pods_iOSTemplates_iOSTemplatesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE478FAC7EE57E92DEFD674B /* Pods_iOSTemplates_iOSTemplatesUITests.framework */; };
 		D79786BB7B76CD708BB4F9A7 /* Pods_iOSTemplates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D788A06C70C2B87D95062DAC /* Pods_iOSTemplates.framework */; };
@@ -70,8 +68,6 @@
 		8A625D532959801D007F1E99 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		8A625D552959807B007F1E99 /* OptionalExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExt.swift; sourceTree = "<group>"; };
 		8A625D5729598791007F1E99 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
-		8A625D5929598993007F1E99 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		8A625D5B295989F8007F1E99 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8A625D5D29598A50007F1E99 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		BFE5FA32D62007B1EC4D9447 /* Pods-iOSTemplates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplates.release.xcconfig"; path = "Target Support Files/Pods-iOSTemplates/Pods-iOSTemplates.release.xcconfig"; sourceTree = "<group>"; };
 		CB0B20F3AFC36BF68A740CA6 /* Pods-iOSTemplates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplates.debug.xcconfig"; path = "Target Support Files/Pods-iOSTemplates/Pods-iOSTemplates.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,9 +145,7 @@
 			children = (
 				8A625D072955685E007F1E99 /* AppDelegate.swift */,
 				8A625D092955685E007F1E99 /* SceneDelegate.swift */,
-				8A625D3A29595A41007F1E99 /* Define */,
 				8A625D4D29597F53007F1E99 /* Library */,
-				8A625D5F29598F94007F1E99 /* Manager */,
 				8A625D4329595F1F007F1E99 /* Network */,
 				8A625D3C29595B32007F1E99 /* Resources */,
 				8A625D4029595C82007F1E99 /* Supports */,
@@ -175,15 +169,6 @@
 				8A625D2A29556860007F1E99 /* iOSTemplatesUITestsLaunchTests.swift */,
 			);
 			path = iOSTemplatesUITests;
-			sourceTree = "<group>";
-		};
-		8A625D3A29595A41007F1E99 /* Define */ = {
-			isa = PBXGroup;
-			children = (
-				8A625D5B295989F8007F1E99 /* App.swift */,
-				8A625D5929598993007F1E99 /* Color.swift */,
-			);
-			path = Define;
 			sourceTree = "<group>";
 		};
 		8A625D3B29595ABE007F1E99 /* View */ = {
@@ -311,13 +296,6 @@
 				8A625D532959801D007F1E99 /* UIViewExt.swift */,
 			);
 			path = Ext;
-			sourceTree = "<group>";
-		};
-		8A625D5F29598F94007F1E99 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		CBA332CCB80C3CE867961CF3 /* Frameworks */ = {
@@ -648,9 +626,7 @@
 				8A625D542959801D007F1E99 /* UIViewExt.swift in Sources */,
 				8A625D5E29598A50007F1E99 /* UIColorExt.swift in Sources */,
 				8A625D0C2955685E007F1E99 /* ViewController.swift in Sources */,
-				8A625D5C295989F8007F1E99 /* App.swift in Sources */,
 				8A625D082955685E007F1E99 /* AppDelegate.swift in Sources */,
-				8A625D5A29598993007F1E99 /* Color.swift in Sources */,
 				8A625D562959807B007F1E99 /* OptionalExt.swift in Sources */,
 				8A625D5829598791007F1E99 /* StringExt.swift in Sources */,
 				8A625D0A2955685E007F1E99 /* SceneDelegate.swift in Sources */,

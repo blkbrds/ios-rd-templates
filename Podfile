@@ -5,16 +5,15 @@ inhibit_all_warnings!
 def testing_pods
   pod 'Quick'
   pod 'Nimble'
-  pod 'RxNimble', subspecs: ['RxBlocking', 'RxTest']
+  pod 'RxNimble'
   pod 'RxSwift'
-  pod 'Sourcery', '1.8.0'
-  pod 'SwiftFormat/CLI'
+  pod 'Sourcery'
+  pod 'SwiftFormat'
 end
 
 target 'iOSTemplates' do
   # UI
   pod 'Kingfisher'
-  pod 'SnapKit'
 
   # Rx
   pod 'RxAlamofire'
@@ -22,7 +21,7 @@ target 'iOSTemplates' do
   pod 'RxDataSources'
   pod 'RxSwift'
 
-  # Storage
+  # Local Storage
   pod 'KeychainAccess'
 
   # Tools
