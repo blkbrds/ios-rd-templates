@@ -7,7 +7,6 @@ def testing_pods
   pod 'Nimble'
   pod 'RxNimble'
   pod 'RxSwift'
-  pod 'Sourcery'
 end
 
 target 'iOSTemplates' do

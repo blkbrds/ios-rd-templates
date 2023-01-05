@@ -1,8 +1,8 @@
 //
 //  ExampleVC.swift
 //
-//  Created by Khoa Vo T.A. VN.Danang on 26/12/2022.
-//  Copyright © 2022 Monstar Lab VietNam Co., Ltd. All rights reserved.
+//  Created by Khoa Vo T.A. VN.Danang on 04/01/2023.
+//  Copyright © 2023 Monstar Lab VietNam Co., Ltd. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,7 @@ final class ExampleVC: ViewController {
     // MARK: - IBOutlets
 
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var playButton: UIButton!
 
     // MARK: - Properties
 
@@ -34,6 +35,12 @@ final class ExampleVC: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    // MARK: - Override functions
+
+    override func setupUI() {
+        super.setupUI()
         configTableView()
     }
 
@@ -46,12 +53,23 @@ final class ExampleVC: ViewController {
 
     override func bindingButtonAction() {
         super.bindingButtonAction()
+
+        playButton.rx.tap
+            .subscribe({ [weak self] _ in
+                guard let this = self else { return }
+                this.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
+
+    // MARK: - Private functions
 
     private func configTableView() {
         tableView.register(ExampleCell.self)
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension ExampleVC: UITableViewDelegate {
 

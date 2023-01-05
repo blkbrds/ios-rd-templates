@@ -84,9 +84,6 @@ PODS:
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
   - SkeletonView (1.30.4)
-  - Sourcery (1.8.0):
-    - Sourcery/CLI-Only (= 1.8.0)
-  - Sourcery/CLI-Only (1.8.0)
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
@@ -105,7 +102,6 @@ DEPENDENCIES:
   - RxSwift
   - RxSwiftExt
   - SkeletonView
-  - Sourcery
   - SwiftLint
 
 SPEC REPOS:
@@ -137,7 +133,6 @@ SPEC REPOS:
     - RxSwift
     - RxSwiftExt
     - SkeletonView
-    - Sourcery
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -168,9 +163,8 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
-  Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 72e568d8e9fee795b8c94b7d5ca291d8883a13c2
+PODFILE CHECKSUM: a9643e2d4d34c6ee36b1bdaad771e129669d948c
 
 COCOAPODS: 1.11.3
