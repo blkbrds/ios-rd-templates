@@ -7,19 +7,20 @@ def testing_pods
   pod 'Nimble'
   pod 'RxNimble'
   pod 'RxSwift'
-  pod 'Sourcery'
-  pod 'SwiftFormat'
 end
 
 target 'iOSTemplates' do
   # UI
   pod 'Kingfisher'
+  pod 'SkeletonView'
 
   # Rx
   pod 'RxAlamofire'
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'RxSwift'
+  pod 'RxBiBinding'
+  pod 'RxSwiftExt'
 
   # Local Storage
   pod 'KeychainAccess'

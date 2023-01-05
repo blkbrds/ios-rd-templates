@@ -52,6 +52,9 @@ PODS:
   - RxAlamofire/Core (6.1.1):
     - Alamofire (~> 5.4)
     - RxSwift (~> 6.0)
+  - RxBiBinding (0.3.5):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxBlocking (6.5.0):
     - RxSwift (= 6.5.0)
   - RxCocoa (6.5.0):
@@ -72,12 +75,15 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - Sourcery (1.8.0):
-    - Sourcery/CLI-Only (= 1.8.0)
-  - Sourcery/CLI-Only (1.8.0)
-  - SwiftFormat (0.50.7):
-    - SwiftFormat/Core (= 0.50.7)
-  - SwiftFormat/Core (0.50.7)
+  - RxSwiftExt (6.0.1):
+    - RxSwiftExt/Core (= 6.0.1)
+    - RxSwiftExt/RxCocoa (= 6.0.1)
+  - RxSwiftExt/Core (6.0.1):
+    - RxSwift (~> 6.0)
+  - RxSwiftExt/RxCocoa (6.0.1):
+    - RxCocoa (~> 6.0)
+    - RxSwiftExt/Core
+  - SkeletonView (1.30.4)
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
@@ -89,12 +95,13 @@ DEPENDENCIES:
   - Quick
   - R.swift
   - RxAlamofire
+  - RxBiBinding
   - RxCocoa
   - RxDataSources
   - RxNimble
   - RxSwift
-  - Sourcery
-  - SwiftFormat
+  - RxSwiftExt
+  - SkeletonView
   - SwiftLint
 
 SPEC REPOS:
@@ -117,14 +124,15 @@ SPEC REPOS:
     - Quick
     - R.swift
     - RxAlamofire
+    - RxBiBinding
     - RxBlocking
     - RxCocoa
     - RxDataSources
     - RxNimble
     - RxRelay
     - RxSwift
-    - Sourcery
-    - SwiftFormat
+    - RxSwiftExt
+    - SkeletonView
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -146,16 +154,17 @@ SPEC CHECKSUMS:
   Quick: 6676ffb409bf04abba2ff23902af2407bfc6ac90
   R.swift: 681bb9135f482e7a81d9d27445b837fef5467e11
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
+  RxBiBinding: c4de0aad6ee668fa73ea6ba423bc0ab5d77b986b
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
-  SwiftFormat: 4fcf72ee44c7198255108c22ed7135c38a36ba6b
+  RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 0a8424640b3c4639baa98e2d86da22a4653dc4ab
+PODFILE CHECKSUM: a9643e2d4d34c6ee36b1bdaad771e129669d948c
 
 COCOAPODS: 1.11.3

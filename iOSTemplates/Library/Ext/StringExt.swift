@@ -1,6 +1,5 @@
 //
 //  StringExt.swift
-//  iOSTemplates
 //
 //  Created by Khoa Vo T.A. VN.Danang on 26/12/2022.
 //  Copyright © 2022 Monstar Lab VietNam Co., Ltd. All rights reserved.
@@ -17,10 +16,6 @@ extension Optional where Wrapped == String {
         case _:
             return ""
         }
-    }
-
-    var isBlankOrNil: Bool {
-        return self == nil || self?.trimmed == ""
     }
 }
 
@@ -72,28 +67,5 @@ extension String {
     func contentWidth(font: UIFont) -> CGFloat {
         let size = (self as NSString).size(withAttributes: [.font: font])
         return size.width
-    }
-
-    func getSubstring(from: Int?, with length: Int) -> String {
-        guard let start = from, start >= 0, start < count, length >= start else {
-            return ""
-        }
-
-        let end: Int
-        if start > 0 {
-            end = start + length - 1
-        } else {
-            end = length - 1
-        }
-        guard end >= start else { return "" }
-        let startIndex = index(self.startIndex, offsetBy: start)
-        let endIndex = index(self.startIndex, offsetBy: end)
-        return String(self[startIndex...endIndex])
-    }
-
-    func checkSubstringEqual(fromIndex index: Int, withLength length: Int, equalTo str: String) -> Bool {
-        let subStr = getSubstring(from: index, with: length)
-        guard subStr.isNotEmpty else { return false }
-        return subStr == str
     }
 }

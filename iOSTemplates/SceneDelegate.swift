@@ -2,6 +2,7 @@
 //  SceneDelegate.swift
 //
 //  Created by Khoa Vo T.A. VN.Danang on 23/12/2022.
+//  Copyright © 2022 Monstar Lab VietNam Co., Ltd. All rights reserved.
 //
 
 import UIKit
@@ -29,8 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let exampleVC = ExampleVC()
         let navController = UINavigationController(rootViewController: exampleVC)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
         window?.rootViewController = navController
+        window?.backgroundColor = .white
         window?.makeKeyAndVisible()
     }
 }
