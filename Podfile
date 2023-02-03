@@ -11,7 +11,7 @@ end
 
 target 'iOSTemplates' do
   # UI
-  pod 'Kingfisher'
+  pod 'SDWebImage'
   pod 'SkeletonView'
 
   # Rx

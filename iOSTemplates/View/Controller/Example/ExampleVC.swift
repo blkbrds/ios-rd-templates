@@ -23,8 +23,9 @@ final class ExampleVC: ViewController {
 
     var dataSource: RxTableViewSectionedReloadDataSource<ItemSection> = {
         let dataSource = RxTableViewSectionedReloadDataSource<ItemSection>(
-            configureCell: { dataSource, tableView, indexPath, item in
+            configureCell: { _, tableView, indexPath, item in
                 let cell = tableView.dequeue(cell: ExampleCell.self, forIndexPath: indexPath)
+                cell.viewModel = ExampleCellVM(item: item)
                 return cell
             }
         )
@@ -41,7 +42,9 @@ final class ExampleVC: ViewController {
 
     override func setupUI() {
         super.setupUI()
+        title = "Example"
         configTableView()
+
     }
 
     override func binding() {
@@ -53,7 +56,6 @@ final class ExampleVC: ViewController {
 
     override func bindingButtonAction() {
         super.bindingButtonAction()
-
         playButton.rx.tap
             .subscribe({ [weak self] _ in
                 guard let this = self else { return }
@@ -66,6 +68,9 @@ final class ExampleVC: ViewController {
 
     private func configTableView() {
         tableView.register(ExampleCell.self)
+        tableView
+            .rx.setDelegate(self)
+            .disposed(by: disposeBag)
     }
 }
 

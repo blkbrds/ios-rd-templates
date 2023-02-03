@@ -14,6 +14,14 @@ final class ExampleCell: UITableViewCell {
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
 
+    // MARK: - Properties
+
+    var viewModel: ExampleCellVM? {
+        didSet {
+            updateView()
+        }
+    }
+
     // MARK: - Life cycle
 
     override func awakeFromNib() {
@@ -21,4 +29,10 @@ final class ExampleCell: UITableViewCell {
     }
 
     // MARK: - Private functions
+
+    private func updateView() {
+        guard let viewModel = viewModel else { return }
+        titleLabel.text = viewModel.item.titleLabel
+        avatarImageView.loadImage(urlString: viewModel.item.avatarURL, completion: nil)
+    }
 }
