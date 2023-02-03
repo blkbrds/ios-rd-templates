@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+final class ExampleCellVM {
+
+    private(set) var item: Item
+
+    init(item: Item) {
+        self.item = item
+    }
+}

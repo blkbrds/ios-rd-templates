@@ -30,6 +30,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH1-df-xf4">
+                        <rect key="frame" x="20" y="59" width="300" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Cxl-BG-hHw"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ccC-nS-qae" firstAttribute="leading" secondItem="HXb-NY-Jgu" secondAttribute="trailing" constant="10" id="520-Mu-8Xo"/>
@@ -37,9 +44,16 @@
                     <constraint firstItem="HXb-NY-Jgu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="H8R-5n-QKh"/>
                     <constraint firstAttribute="trailing" secondItem="ccC-nS-qae" secondAttribute="trailing" constant="15" id="bCJ-bD-bIc"/>
                     <constraint firstItem="ccC-nS-qae" firstAttribute="centerY" secondItem="HXb-NY-Jgu" secondAttribute="centerY" id="bUy-es-ITR"/>
+                    <constraint firstAttribute="trailing" secondItem="gH1-df-xf4" secondAttribute="trailing" id="dwb-jp-J3m"/>
+                    <constraint firstItem="gH1-df-xf4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="f77-cD-6kF"/>
+                    <constraint firstAttribute="bottom" secondItem="gH1-df-xf4" secondAttribute="bottom" id="xC6-JR-8XC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarImageView" destination="HXb-NY-Jgu" id="bpL-Bw-xvc"/>
+                <outlet property="titleLabel" destination="ccC-nS-qae" id="XlU-ty-jCp"/>
+            </connections>
             <point key="canvasLocation" x="-70" y="21"/>
         </tableViewCell>
     </objects>
