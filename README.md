@@ -13,5 +13,5 @@ This is iOS Team 's template used in our projects using Xcode Templates
 
 <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://monstar-lab.com/global/wp-content/themes/monstar_lab_2021_theme/public/images/revamp/logo.png">
-      <img alt="Nimble logo" src="https://monstar-lab.com/global/wp-content/themes/monstar_lab_2021_theme/public/images/revamp/logo.png" style="height: 50px; width:50px;">
+      <img alt="Monstarlab logo" src="https://monstar-lab.com/global/wp-content/themes/monstar_lab_2021_theme/public/images/revamp/logo.png" style="height: 50px; width:50px;">
 </picture>
