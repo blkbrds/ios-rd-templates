@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func configWindow() {
         let exampleVC = ExampleVC()
+        exampleVC.viewModel = ExampleVM()
         let navController = UINavigationController(rootViewController: exampleVC)
         window?.rootViewController = navController
         window?.backgroundColor = .white

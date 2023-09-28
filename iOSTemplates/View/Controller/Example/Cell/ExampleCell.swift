@@ -27,8 +27,8 @@ final class ExampleCell: UITableViewCell {
 
     // MARK: - Private functions
     private func updateView() {
-        guard let viewModel = viewModel else { return }
-        titleLabel.text = viewModel.item.titleLabel
-        avatarImageView.loadImage(urlString: viewModel.item.avatarURL, completion: nil)
+        guard let viewModel = viewModel, let item = viewModel.item else { return }
+        titleLabel.text = item.titleLabel
+        avatarImageView.loadImage(urlString: item.avatarURL, completion: nil)
     }
 }

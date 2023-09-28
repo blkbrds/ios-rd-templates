@@ -9,9 +9,9 @@ import Foundation
 
 final class ExampleCellVM {
 
-    private(set) var item: Item
+    private(set) var item: Item?
 
-    init(item: Item) {
+    init(item: Item?) {
         self.item = item
     }
 }
