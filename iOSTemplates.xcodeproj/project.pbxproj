@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A56A101295D3EA800F2287D /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56A0FF295D3EA800F2287D /* ExampleCell.swift */; };
 		8A56A102295D3EA800F2287D /* ExampleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A56A100295D3EA800F2287D /* ExampleCell.xib */; };
+		8A58F9D029753B620047D607 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58F9CF29753B620047D607 /* UIImageViewExt.swift */; };
 		8A625D082955685E007F1E99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D072955685E007F1E99 /* AppDelegate.swift */; };
 		8A625D0A2955685E007F1E99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D092955685E007F1E99 /* SceneDelegate.swift */; };
 		8A625D0C2955685E007F1E99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D0B2955685E007F1E99 /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		7EB0286623D74BD5DABEF9E6 /* Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSTemplates-iOSTemplatesUITests/Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8A56A0FF295D3EA800F2287D /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		8A56A100295D3EA800F2287D /* ExampleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleCell.xib; sourceTree = "<group>"; };
+		8A58F9CF29753B620047D607 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		8A625D042955685E007F1E99 /* iOSTemplates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTemplates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A625D072955685E007F1E99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A625D092955685E007F1E99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				8A625D5729598791007F1E99 /* StringExt.swift */,
 				8A8F056A295D783900296354 /* UICollectionViewExt.swift */,
 				8A625D5D29598A50007F1E99 /* UIColorExt.swift */,
+				8A58F9CF29753B620047D607 /* UIImageViewExt.swift */,
 				8A8F0568295D781100296354 /* UITableViewExt.swift */,
 				8A625D532959801D007F1E99 /* UIViewExt.swift */,
 			);
@@ -631,6 +634,7 @@
 				8A625D082955685E007F1E99 /* AppDelegate.swift in Sources */,
 				8A8F056B295D783900296354 /* UICollectionViewExt.swift in Sources */,
 				8A8F0571295D866300296354 /* Item.swift in Sources */,
+				8A58F9D029753B620047D607 /* UIImageViewExt.swift in Sources */,
 				8A8F0567295D437800296354 /* ExampleCellVM.swift in Sources */,
 				8A625D562959807B007F1E99 /* OptionalExt.swift in Sources */,
 				8A625D5829598791007F1E99 /* StringExt.swift in Sources */,
@@ -804,15 +808,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0B20F3AFC36BF68A740CA6 /* Pods-iOSTemplates.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSTemplates/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -837,15 +843,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFE5FA32D62007B1EC4D9447 /* Pods-iOSTemplates.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSTemplates/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -870,10 +878,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCF5F3873851E49C2F4B2B23 /* Pods-iOSTemplatesTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
@@ -890,10 +899,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED5286A32DD4267F0D70D4C2 /* Pods-iOSTemplatesTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
@@ -910,9 +920,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 70CD2FC8403890DA7E5606E9 /* Pods-iOSTemplates-iOSTemplatesUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.ml.iOSTemplatesUITests;
@@ -928,9 +939,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EB0286623D74BD5DABEF9E6 /* Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.ml.iOSTemplatesUITests;

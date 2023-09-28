@@ -6,74 +6,66 @@
 //
 
 import UIKit
-import RxSwift
-import RxBiBinding
-import RxDataSources
 
 final class ExampleVC: ViewController {
 
     // MARK: - IBOutlets
-
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var playButton: UIButton!
 
     // MARK: - Properties
-
-    private var viewModel: ExampleVM = ExampleVM()
-
-    var dataSource: RxTableViewSectionedReloadDataSource<ItemSection> = {
-        let dataSource = RxTableViewSectionedReloadDataSource<ItemSection>(
-            configureCell: { dataSource, tableView, indexPath, item in
-                let cell = tableView.dequeue(cell: ExampleCell.self, forIndexPath: indexPath)
-                return cell
-            }
-        )
-        return dataSource
-    }()
+    var viewModel: ExampleVM?
 
     // MARK: - Life cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // MARK: - Override functions
-
     override func setupUI() {
         super.setupUI()
+        title = "Example"
         configTableView()
-    }
-
-    override func binding() {
-        super.binding()
-        Observable.just(viewModel.items)
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-    }
-
-    override func bindingButtonAction() {
-        super.bindingButtonAction()
-
-        playButton.rx.tap
-            .subscribe({ [weak self] _ in
-                guard let this = self else { return }
-                this.tableView.reloadData()
-            })
-            .disposed(by: disposeBag)
+        tableView.reloadData()
     }
 
     // MARK: - Private functions
-
     private func configTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(ExampleCell.self)
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UITableViewDataSource
+extension ExampleVC: UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.items.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(cell: ExampleCell.self, forIndexPath: indexPath)
+        if let viewModel = viewModel {
+            cell.viewModel = viewModel.viewModelForItem(at: indexPath)
+        }
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
 extension ExampleVC: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 100
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("IndexPath: \(indexPath.row)")
     }
 }

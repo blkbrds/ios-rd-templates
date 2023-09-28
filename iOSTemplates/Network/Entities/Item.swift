@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RxDataSources
 
 final class Item {
 
@@ -18,19 +17,5 @@ final class Item {
         self.id = id
         self.avatarURL = avatarURL
         self.titleLabel = titleLabel
-    }
-}
-
-struct ItemSection {
-
-    var header: String
-    var items: [Item]
-}
-
-extension ItemSection: SectionModelType {
-
-    init(original: ItemSection, items: [Item]) {
-        self = original
-        self.items = items
     }
 }

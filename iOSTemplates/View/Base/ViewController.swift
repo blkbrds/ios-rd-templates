@@ -5,16 +5,12 @@
 //
 
 import UIKit
-import RxSwift
 
 class ViewController: UIViewController {
-
-    var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        binding()
         setupData()
     }
 
@@ -39,9 +35,4 @@ class ViewController: UIViewController {
     /*
         This function is used for data binding
      **/
-    internal func binding() {
-        bindingButtonAction()
-    }
-
-    internal func bindingButtonAction() { }
 }
