@@ -1,37 +1,35 @@
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '13.0'
 use_frameworks!
 inhibit_all_warnings!
 
 def testing_pods
-  pod 'Quick'
-  pod 'Nimble'
-  pod 'RxNimble'
-  pod 'RxSwift'
+  pod 'Quick', '7.3.0'
+  pod 'Nimble', '12.3.0'
+end
+
+def app_pods
+  # UI
+  pod 'SDWebImage', '5.18.2'
+  pod 'SkeletonView', '1.30.4'
+
+  # Network
+  pod 'Alamofire', '5.8.0'
+
+  # Local Storage
+  pod 'KeychainAccess', '4.2.2'
+
+  # Tools
+  pod 'Firebase/Crashlytics', '10.15.0'
+  pod 'IQKeyboardManagerSwift', '6.5.12'
+
+  # Development
+  pod 'SwiftLint', '0.53.0'
 end
 
 target 'iOSTemplates' do
-  # UI
-  pod 'SDWebImage'
-  pod 'SkeletonView'
 
-  # Rx
-  pod 'RxAlamofire'
-  pod 'RxCocoa'
-  pod 'RxDataSources'
-  pod 'RxSwift'
-  pod 'RxBiBinding'
-  pod 'RxSwiftExt'
-
-  # Local Storage
-  pod 'KeychainAccess'
-
-  # Tools
-  pod 'Firebase/Crashlytics'
-  pod 'IQKeyboardManagerSwift'
-  pod 'R.swift'
-
-  # Development
-  pod 'SwiftLint'
+  app_pods
 
   target 'iOSTemplatesTests' do
     inherit! :search_paths
@@ -44,16 +42,15 @@ target 'iOSTemplates' do
 end
 
 post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-      # Fix some pods creating bundle, asking for signing
-      if target.respond_to?(:product_type)
-        target.build_configurations.each do |config|
-            config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
-        end
-      end
+
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings["GENERATE_INFOPLIST_FILE"] = 'YES'
     end
-  end
+
+    installer.pods_project.targets.each do |target|
+
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+        end
+    end
 end
