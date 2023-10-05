@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A05D5D82ACAA4CB004FE287 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05D5D72ACAA4CB004FE287 /* Error.swift */; };
+		8A05D5DA2ACAAB50004FE287 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05D5D92ACAAB50004FE287 /* ResponseSerializer.swift */; };
 		8A56A101295D3EA800F2287D /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56A0FF295D3EA800F2287D /* ExampleCell.swift */; };
 		8A56A102295D3EA800F2287D /* ExampleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A56A100295D3EA800F2287D /* ExampleCell.xib */; };
 		8A58F9D029753B620047D607 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58F9CF29753B620047D607 /* UIImageViewExt.swift */; };
+		8A5CC4292ACD2281007A555E /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5CC4282ACD2281007A555E /* DataExt.swift */; };
+		8A5CC42B2ACD48F8007A555E /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5CC42A2ACD48F8007A555E /* PokemonService.swift */; };
+		8A5CC42F2ACD52E4007A555E /* APIPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5CC42E2ACD52E4007A555E /* APIPokemon.swift */; };
+		8A5CC4322ACD649D007A555E /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5CC4312ACD649D007A555E /* AppConfiguration.swift */; };
 		8A625D082955685E007F1E99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D072955685E007F1E99 /* AppDelegate.swift */; };
 		8A625D0A2955685E007F1E99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D092955685E007F1E99 /* SceneDelegate.swift */; };
 		8A625D0C2955685E007F1E99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A625D0B2955685E007F1E99 /* ViewController.swift */; };
@@ -28,8 +34,8 @@
 		8A8F0569295D781100296354 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F0568295D781100296354 /* UITableViewExt.swift */; };
 		8A8F056B295D783900296354 /* UICollectionViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F056A295D783900296354 /* UICollectionViewExt.swift */; };
 		8A8F056D295D814900296354 /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F056C295D814900296354 /* RequestSerializer.swift */; };
-		8A8F056F295D822E00296354 /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F056E295D822E00296354 /* RequestConfiguration.swift */; };
-		8A8F0571295D866300296354 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F0570295D866300296354 /* Item.swift */; };
+		8A8F056F295D822E00296354 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F056E295D822E00296354 /* TargetType.swift */; };
+		8A8F0571295D866300296354 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F0570295D866300296354 /* Pokemon.swift */; };
 		8A90902C296577D3008218BD /* ExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90902A296577D3008218BD /* ExampleVC.swift */; };
 		8A90902D296577D3008218BD /* ExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A90902B296577D3008218BD /* ExampleVC.xib */; };
 		8A90903129657824008218BD /* ExampleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90903029657824008218BD /* ExampleVM.swift */; };
@@ -59,9 +65,16 @@
 		3D73B1EFF3D8733A5E0662FB /* Pods_iOSTemplatesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTemplatesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD2FC8403890DA7E5606E9 /* Pods-iOSTemplates-iOSTemplatesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplates-iOSTemplatesUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSTemplates-iOSTemplatesUITests/Pods-iOSTemplates-iOSTemplatesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EB0286623D74BD5DABEF9E6 /* Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSTemplates-iOSTemplatesUITests/Pods-iOSTemplates-iOSTemplatesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A05D5D72ACAA4CB004FE287 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		8A05D5D92ACAAB50004FE287 /* ResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		8A56A0FF295D3EA800F2287D /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		8A56A100295D3EA800F2287D /* ExampleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleCell.xib; sourceTree = "<group>"; };
 		8A58F9CF29753B620047D607 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		8A5CC4282ACD2281007A555E /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
+		8A5CC42A2ACD48F8007A555E /* PokemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
+		8A5CC42E2ACD52E4007A555E /* APIPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPokemon.swift; sourceTree = "<group>"; };
+		8A5CC4312ACD649D007A555E /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		8A5CC4362ACD6604007A555E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		8A625D042955685E007F1E99 /* iOSTemplates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTemplates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A625D072955685E007F1E99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A625D092955685E007F1E99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,8 +97,8 @@
 		8A8F0568295D781100296354 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		8A8F056A295D783900296354 /* UICollectionViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExt.swift; sourceTree = "<group>"; };
 		8A8F056C295D814900296354 /* RequestSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSerializer.swift; sourceTree = "<group>"; };
-		8A8F056E295D822E00296354 /* RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfiguration.swift; sourceTree = "<group>"; };
-		8A8F0570295D866300296354 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8A8F056E295D822E00296354 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		8A8F0570295D866300296354 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		8A90902A296577D3008218BD /* ExampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleVC.swift; sourceTree = "<group>"; };
 		8A90902B296577D3008218BD /* ExampleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleVC.xib; sourceTree = "<group>"; };
 		8A90903029657824008218BD /* ExampleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleVM.swift; sourceTree = "<group>"; };
@@ -148,6 +161,37 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8A5CC42C2ACD4F3E007A555E /* Define */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		8A5CC42D2ACD529C007A555E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8A5CC42E2ACD52E4007A555E /* APIPokemon.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		8A5CC4302ACD6483007A555E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8A5CC4312ACD649D007A555E /* AppConfiguration.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8A5CC4332ACD657D007A555E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8A5CC4362ACD6604007A555E /* Config.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		8A625CFB2955685E007F1E99 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +217,8 @@
 		8A625D062955685E007F1E99 /* iOSTemplates */ = {
 			isa = PBXGroup;
 			children = (
+				8A5CC4302ACD6483007A555E /* Manager */,
+				8A5CC42C2ACD4F3E007A555E /* Define */,
 				8A625D072955685E007F1E99 /* AppDelegate.swift */,
 				8A625D092955685E007F1E99 /* SceneDelegate.swift */,
 				8A625D4D29597F53007F1E99 /* Library */,
@@ -247,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				8A625D1529556860007F1E99 /* Info.plist */,
+				8A5CC4332ACD657D007A555E /* Config */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -270,6 +317,7 @@
 		8A625D4329595F1F007F1E99 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8A5CC42D2ACD529C007A555E /* API */,
 				8A625D4929597DBE007F1E99 /* Core */,
 				8A625D4A29597DDE007F1E99 /* Entities */,
 				8A625D4B29597DF9007F1E99 /* Service */,
@@ -291,8 +339,10 @@
 		8A625D4929597DBE007F1E99 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8A8F056E295D822E00296354 /* RequestConfiguration.swift */,
+				8A05D5D72ACAA4CB004FE287 /* Error.swift */,
 				8A8F056C295D814900296354 /* RequestSerializer.swift */,
+				8A05D5D92ACAAB50004FE287 /* ResponseSerializer.swift */,
+				8A8F056E295D822E00296354 /* TargetType.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -300,7 +350,7 @@
 		8A625D4A29597DDE007F1E99 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				8A8F0570295D866300296354 /* Item.swift */,
+				8A8F0570295D866300296354 /* Pokemon.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -308,6 +358,7 @@
 		8A625D4B29597DF9007F1E99 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8A5CC42A2ACD48F8007A555E /* PokemonService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -325,6 +376,7 @@
 			children = (
 				8A625D4F29597F85007F1E99 /* BundleExt.swift */,
 				8A625D5129597FB0007F1E99 /* CollectionExt.swift */,
+				8A5CC4282ACD2281007A555E /* DataExt.swift */,
 				8A625D552959807B007F1E99 /* OptionalExt.swift */,
 				8A625D5729598791007F1E99 /* StringExt.swift */,
 				8A8F056A295D783900296354 /* UICollectionViewExt.swift */,
@@ -625,15 +677,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A56A101295D3EA800F2287D /* ExampleCell.swift in Sources */,
-				8A8F056F295D822E00296354 /* RequestConfiguration.swift in Sources */,
+				8A5CC4292ACD2281007A555E /* DataExt.swift in Sources */,
+				8A8F056F295D822E00296354 /* TargetType.swift in Sources */,
 				8A625D542959801D007F1E99 /* UIViewExt.swift in Sources */,
 				8A8F0569295D781100296354 /* UITableViewExt.swift in Sources */,
 				8A625D5E29598A50007F1E99 /* UIColorExt.swift in Sources */,
+				8A05D5D82ACAA4CB004FE287 /* Error.swift in Sources */,
 				8A8F056D295D814900296354 /* RequestSerializer.swift in Sources */,
 				8A625D0C2955685E007F1E99 /* ViewController.swift in Sources */,
+				8A5CC42F2ACD52E4007A555E /* APIPokemon.swift in Sources */,
 				8A625D082955685E007F1E99 /* AppDelegate.swift in Sources */,
+				8A5CC4322ACD649D007A555E /* AppConfiguration.swift in Sources */,
 				8A8F056B295D783900296354 /* UICollectionViewExt.swift in Sources */,
-				8A8F0571295D866300296354 /* Item.swift in Sources */,
+				8A5CC42B2ACD48F8007A555E /* PokemonService.swift in Sources */,
+				8A8F0571295D866300296354 /* Pokemon.swift in Sources */,
 				8A58F9D029753B620047D607 /* UIImageViewExt.swift in Sources */,
 				8A8F0567295D437800296354 /* ExampleCellVM.swift in Sources */,
 				8A625D562959807B007F1E99 /* OptionalExt.swift in Sources */,
@@ -643,6 +700,7 @@
 				8A625D5029597F85007F1E99 /* BundleExt.swift in Sources */,
 				8A90902C296577D3008218BD /* ExampleVC.swift in Sources */,
 				8A625D5229597FB0007F1E99 /* CollectionExt.swift in Sources */,
+				8A05D5DA2ACAAB50004FE287 /* ResponseSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +750,7 @@
 /* Begin XCBuildConfiguration section */
 		8A625D2C29556860007F1E99 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5CC4362ACD6604007A555E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -740,7 +799,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -752,6 +811,7 @@
 		};
 		8A625D2D29556860007F1E99 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5CC4362ACD6604007A555E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -794,7 +854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -814,7 +874,6 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSTemplates/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -849,7 +908,6 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSTemplates/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -884,7 +942,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.ml.iOSTemplatesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -905,7 +963,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.ml.iOSTemplatesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

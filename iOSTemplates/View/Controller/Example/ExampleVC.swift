@@ -19,6 +19,7 @@ final class ExampleVC: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        performGetListPokemons()
     }
 
     // MARK: - Override functions
@@ -26,7 +27,6 @@ final class ExampleVC: ViewController {
         super.setupUI()
         title = "Example"
         configTableView()
-        tableView.reloadData()
     }
 
     // MARK: - Private functions
@@ -34,6 +34,19 @@ final class ExampleVC: ViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ExampleCell.self)
+    }
+
+    private func performGetListPokemons() {
+        guard let viewModel = viewModel else { return }
+        viewModel.performGetListPokemons { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.tableView.reloadData()
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+            }
+        }
     }
 }
 
@@ -46,7 +59,7 @@ extension ExampleVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.items.count
+        return viewModel.pokemons.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
