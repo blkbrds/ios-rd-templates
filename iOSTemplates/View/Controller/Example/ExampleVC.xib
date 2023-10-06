@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExampleVC" customModule="iOSTemplates" customModuleProvider="target">
             <connections>
-                <outlet property="playButton" destination="dhj-XO-Egk" id="RSC-ad-JPa"/>
                 <outlet property="tableView" destination="ZtN-FL-cx2" id="qZA-nB-3VN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,30 +24,12 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhj-XO-Egk">
-                    <rect key="frame" x="334" y="782" width="50" height="50"/>
-                    <color key="backgroundColor" red="0.031372549019607843" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="dhj-XO-Egk" secondAttribute="height" multiplier="1:1" id="PFi-ub-isW"/>
-                        <constraint firstAttribute="width" constant="50" id="wtG-x5-LwA"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="pencil.circle.fill" catalog="system"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="25"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="dhj-XO-Egk" secondAttribute="trailing" constant="30" id="2Fn-EH-0eU"/>
                 <constraint firstItem="ZtN-FL-cx2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2vt-9I-Hw3"/>
                 <constraint firstItem="ZtN-FL-cx2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E4b-3I-3vL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dhj-XO-Egk" secondAttribute="bottom" constant="30" id="MrF-Xq-MlG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZtN-FL-cx2" secondAttribute="bottom" id="ZuG-X0-OIj"/>
                 <constraint firstAttribute="trailing" secondItem="ZtN-FL-cx2" secondAttribute="trailing" id="pGe-lE-oGG"/>
             </constraints>
@@ -56,7 +37,6 @@
         </view>
     </objects>
     <resources>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -23,12 +23,21 @@ final class ExampleCell: UITableViewCell {
     // MARK: - Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        avatarImageView.showSkeleton(transition: .crossDissolve(0.25))
+        titleLabel.showSkeleton(transition: .crossDissolve(0.25))
     }
 
     // MARK: - Private functions
     private func updateView() {
-        guard let viewModel = viewModel, let item = viewModel.item else { return }
-        titleLabel.text = item.titleLabel
-        avatarImageView.loadImage(urlString: item.avatarURL, completion: nil)
+        guard let viewModel = viewModel, let pokemon = viewModel.pokemon else { return }
+        titleLabel.text = pokemon.name
+        if pokemon.name.isNotEmpty {
+            // titleLabel.hideSkeleton(transition: .crossDissolve(0.25))
+            let urlString: String = "https://static.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png/revision/latest/scale-to-width-down/767?cb=20140520015336"
+            avatarImageView.loadImage(urlString: urlString) { [weak self] _ in
+                guard let this = self else { return }
+                // this.avatarImageView.hideSkeleton(transition: .crossDissolve(0.25))
+            }
+        }
     }
 }

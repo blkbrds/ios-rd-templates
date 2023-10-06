@@ -69,3 +69,7 @@ extension String {
         return size.width
     }
 }
+
+func / (lhs: String, rhs: String) -> String {
+    return lhs + "/" + rhs
+}

@@ -6,27 +6,28 @@
 //
 
 import UIKit
+import SkeletonView
 
 final class ExampleVC: ViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var playButton: UIButton!
 
     // MARK: - Properties
     var viewModel: ExampleVM?
 
     // MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: - Override functions
     override func setupUI() {
         super.setupUI()
-        title = "Example"
+        title = App.String.Example.title
         configTableView()
-        tableView.reloadData()
+    }
+
+    override func setupData() {
+        super.setupData()
+        performGetListPokemons()
     }
 
     // MARK: - Private functions
@@ -35,18 +36,31 @@ final class ExampleVC: ViewController {
         tableView.dataSource = self
         tableView.register(ExampleCell.self)
     }
+
+    private func performGetListPokemons() {
+        guard let viewModel = viewModel else { return }
+        viewModel.performGetListPokemons { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.tableView.reloadData()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
-extension ExampleVC: UITableViewDataSource {
+extension ExampleVC: SkeletonTableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numSections(in collectionSkeletonView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.items.count
+        return viewModel.pokemons.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +69,10 @@ extension ExampleVC: UITableViewDataSource {
             cell.viewModel = viewModel.viewModelForItem(at: indexPath)
         }
         return cell
+    }
+
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return App.String.Identifier.exampleCell
     }
 }
 
