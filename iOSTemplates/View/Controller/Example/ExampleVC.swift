@@ -6,27 +6,28 @@
 //
 
 import UIKit
+import SkeletonView
 
 final class ExampleVC: ViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var playButton: UIButton!
 
     // MARK: - Properties
     var viewModel: ExampleVM?
 
     // MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        performGetListPokemons()
-    }
 
     // MARK: - Override functions
     override func setupUI() {
         super.setupUI()
-        title = "Example"
+        title = App.String.Example.title
         configTableView()
+    }
+
+    override func setupData() {
+        super.setupData()
+        performGetListPokemons()
     }
 
     // MARK: - Private functions
@@ -44,16 +45,16 @@ final class ExampleVC: ViewController {
             case .success:
                 this.tableView.reloadData()
             case .failure(let error):
-                print("\(error.localizedDescription)")
+                this.alert(error: error)
             }
         }
     }
 }
 
 // MARK: - UITableViewDataSource
-extension ExampleVC: UITableViewDataSource {
+extension ExampleVC: SkeletonTableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numSections(in collectionSkeletonView: UITableView) -> Int {
         return 1
     }
 
@@ -68,6 +69,10 @@ extension ExampleVC: UITableViewDataSource {
             cell.viewModel = viewModel.viewModelForItem(at: indexPath)
         }
         return cell
+    }
+
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return App.String.Identifier.exampleCell
     }
 }
 

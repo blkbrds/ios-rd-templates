@@ -15,49 +15,79 @@ extension Network {
 
     static let shared: Network = {
         guard let manager = Network() else {
-            fatalError("")
+            fatalError(App.String.APIError.unknownError)
         }
         return manager
     }()
 }
 
-enum APIError: Int, Error, Decodable {
+enum APIError: Error, Decodable {
 
-    case emptyOrInvalidResponse = 400
-    case cancelRequest = 888
-    case authenticationFailed = 401
+    case emptyOrInvalidResponse
+    case cancelRequest
+    case badRequest
     case noInternetConnection
-    case requestTimeout = -1_001
-    case forceUpdate = 426
-    case unknown = 999
+    case requestTimeout
+    case forceUpdate
+    case unknown
 
-    var errorDescription: String? {
+    init(from statusCode: Int) {
+        switch statusCode {
+        case 400:
+            self = .cancelRequest
+        case 404:
+            self = .badRequest
+        case -1_001:
+            self = .requestTimeout
+        case 426:
+            self = .forceUpdate
+        default:
+            self = .unknown
+        }
+    }
+
+    var errorDescription: String {
         switch self {
         case .noInternetConnection:
-            return ""
-        case .authenticationFailed:
-            return ""
+            return App.String.APIError.noInternetConnection
         case .requestTimeout:
-            return ""
+            return App.String.APIError.requestTimeout
         case .forceUpdate:
-            return ""
-        default:
-            return ""
+            return App.String.APIError.forceUpdate
+        case .unknown, .emptyOrInvalidResponse, .cancelRequest, .badRequest:
+            return App.String.APIError.unknownError
         }
     }
 
     var statusCode: Int {
         switch self {
+        case .cancelRequest, .emptyOrInvalidResponse, .unknown:
+            return 400
+        case .badRequest:
+            return 404
         case .noInternetConnection:
             return 599
-        case .authenticationFailed:
-            return 401
         case .requestTimeout:
             return -1_001
         case .forceUpdate:
             return 426
-        default:
-            return 400
         }
     }
+}
+
+extension Error {
+
+    func show() {
+        let `self` = self as NSError
+        self.show()
+    }
+
+    public var code: Int {
+        let `self` = self as NSError
+        return self.code
+    }
+}
+
+extension NSError {
+    func show() { }
 }

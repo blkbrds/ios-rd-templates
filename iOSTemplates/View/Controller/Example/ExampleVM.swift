@@ -26,7 +26,7 @@ final class ExampleVM {
                 if let pokemonList = pokemonList {
                     self.pokemons = pokemonList.results
                 }
-                completion(.success(pokemonList))
+                completion(.success(nil))
             case .failure(let error):
                 completion(.failure(error))
             }

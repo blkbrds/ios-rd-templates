@@ -28,13 +28,24 @@ final class CustomDecodableResponseSerializer<T: Decodable>: ResponseSerializer 
         }
 
         guard let response = response else {
+            if let error = error {
+                let errorCode = error.code
+                if abs(errorCode) == APIError.cancelRequest.code { // code is 999 or -999
+                    return .failure(APIError.cancelRequest)
+                }
+                return .failure(APIError(from: errorCode))
+            }
             return .failure(APIError.emptyOrInvalidResponse)
         }
 
         let statusCode = response.statusCode
 
         if let error = error {
-            // return .failure(error)
+            let errorCode = error.code
+            if abs(errorCode) == APIError.cancelRequest.code { // code is 999 or -999
+                return .failure(APIError.cancelRequest)
+            }
+            return .failure(APIError(from: errorCode))
         }
 
         if 204...205 ~= statusCode { // empty data status code
@@ -46,7 +57,7 @@ final class CustomDecodableResponseSerializer<T: Decodable>: ResponseSerializer 
             if statusCode == APIError.cancelRequest.statusCode {
                 return .failure(.cancelRequest)
             }
-            return .failure(.cancelRequest)
+            return .failure(.unknown)
         }
 
         if let data = data {
@@ -77,10 +88,11 @@ extension DataRequest {
             case .success(let result):
                 completionHandler(result)
             case .failure(let error):
-                guard let errorCode = error.responseCode, let apiError = APIError(rawValue: errorCode) else {
+                guard let errorCode = error.responseCode else {
                     completionHandler(.failure(APIError.unknown))
                     return
                 }
+                let apiError = APIError.init(from: errorCode)
                 completionHandler(.failure(apiError))
             }
         }
