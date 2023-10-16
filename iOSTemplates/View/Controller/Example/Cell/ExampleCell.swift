@@ -30,13 +30,15 @@ final class ExampleCell: UITableViewCell {
     // MARK: - Private functions
     private func updateView() {
         guard let viewModel = viewModel, let pokemon = viewModel.pokemon else { return }
-        titleLabel.text = pokemon.name
         if pokemon.name.isNotEmpty {
-            // titleLabel.hideSkeleton(transition: .crossDissolve(0.25))
             let urlString: String = "https://static.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png/revision/latest/scale-to-width-down/767?cb=20140520015336"
             avatarImageView.loadImage(urlString: urlString) { [weak self] _ in
                 guard let this = self else { return }
-                // this.avatarImageView.hideSkeleton(transition: .crossDissolve(0.25))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    this.avatarImageView.hideSkeleton(transition: .crossDissolve(0.25))
+                    this.titleLabel.hideSkeleton(transition: .crossDissolve(0.25))
+                    this.titleLabel.text = pokemon.name
+                }
             }
         }
     }
