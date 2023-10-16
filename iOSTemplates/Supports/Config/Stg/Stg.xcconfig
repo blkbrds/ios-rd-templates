@@ -1,8 +1,8 @@
 //
-//  Dev.xcconfig
+//  Stg.xcconfig
 //  iOSTemplates
 //
-//  Created by Khoa Vo T.A. VN.Danang on 04/10/2023.
+//  Created by Khoa Vo T.A. VN.Danang on 11/10/2023.
 //  Copyright © 2023 Monstar Lab VietNam Co., Ltd. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 // APP INFO
-DISPLAY_NAME = iOSTemplates
+PRODUCT_NAME = [STG]iOSTemplates
 
-PRODUCT_BUNDLE_IDENTIFIER = vn.ml.iOSTemplates
+PRODUCT_BUNDLE_IDENTIFIER = vn.ml.iOSTemplates.stg
 
 VERSION_NUMBER = 1.0.0
 
