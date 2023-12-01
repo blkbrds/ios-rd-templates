@@ -271,8 +271,6 @@
 		8A625D062955685E007F1E99 /* iOSTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				8A625D072955685E007F1E99 /* AppDelegate.swift */,
-				8A625D092955685E007F1E99 /* SceneDelegate.swift */,
 				8A5CC42C2ACD4F3E007A555E /* Define */,
 				8A625D4D29597F53007F1E99 /* Library */,
 				8A5CC4302ACD6483007A555E /* Manager */,
@@ -314,6 +312,8 @@
 		8A625D3C29595B32007F1E99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A625D072955685E007F1E99 /* AppDelegate.swift */,
+				8A625D092955685E007F1E99 /* SceneDelegate.swift */,
 				8A625D4229595D9B007F1E99 /* Assets */,
 				8A625D4129595D84007F1E99 /* LaunchScreen */,
 			);
